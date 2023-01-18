@@ -1,1 +1,25 @@
-/*# sourceMappingURL=App.css.map */
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav {
+  background-color: blue;
+  padding: 1px;
+}
+nav ul {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+nav ul li {
+  height: 100%;
+}
+nav ul a {
+  height: 100%;
+  color: yellow;
+}/*# sourceMappingURL=App.css.map */
