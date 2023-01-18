@@ -1,12 +1,20 @@
 import React from 'react'
 import { useSelector} from 'react-redux';
 
-
+function Input(props)
+{
+  return(
+    <div>
+      <input></input>
+      <button>Add</button>
+    </div>
+  )
+}
 
 function Todo(props)
 {
   return(
-    <div><input type={"checkbox"} checked={props.complete}></input> {props.description}</div>
+    <div><input type={"checkbox"} checked={props.complete}></input> {props.description} <button>Delete</button></div>
   )
 }
 
@@ -27,6 +35,7 @@ function TodoList(props)
 export default function Todos() {
   return (
     <div>
+        <Input/>
         <TodoList/>
     </div>
   )

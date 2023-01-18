@@ -10,10 +10,9 @@ nav {
   padding: 1px;
 }
 nav ul {
-  width: 50%;
   height: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   list-style: none;
 }
 nav ul li {
