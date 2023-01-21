@@ -21,4 +21,8 @@ nav ul li {
 nav ul a {
   height: 100%;
   color: yellow;
+}
+
+form input, form textarea {
+  width: 80%;
 }/*# sourceMappingURL=App.css.map */
