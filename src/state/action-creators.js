@@ -24,3 +24,7 @@ export function toggleComplete(index){
             index: index
         })
 }
+
+export function clearComplete(){
+    return ({type: "CLEAR_COMPLETE"});
+}

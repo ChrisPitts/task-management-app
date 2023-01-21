@@ -20,6 +20,8 @@ export function reducer(state = [], action){
                 },
                 ...state.slice(action.index + 1)
             ]
+        case "CLEAR_COMPLETE":
+            return state.filter(item =>!item.complete);
         default: 
             return state;
     }

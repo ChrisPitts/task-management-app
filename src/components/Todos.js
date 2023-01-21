@@ -1,8 +1,7 @@
 // import React from 'react'
 import React, { Component } from 'react';
-import { useDispatch, useSelector} from 'react-redux';
-import { addItem, deleteItem, toggleComplete} from '../state/action-creators';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector, connect} from 'react-redux';
+import { addItem, clearComplete, deleteItem, toggleComplete} from '../state/action-creators';
 
 export class Input extends Component {
     constructor(props){
@@ -30,7 +29,6 @@ export class Input extends Component {
 
 function Todo(props)
 {
-    let dispatch = useDispatch();
     return(
         <div>
             <input 
@@ -58,7 +56,8 @@ function TodoList(props)
             index={index}
             onDelete={props.onDelete}
             toggleComplete={props.toggleComplete}/>
-      ))}
+        ))}
+        <button onClick={()=>props.clearComplete()}>Clear Complete</button>
     </>
   );
 }
@@ -78,6 +77,9 @@ function mapDispatchToProps(dispatch)
         },
         toggleComplete: (index)=>{
             dispatch(toggleComplete(index));
+        },
+        clearComplete: ()=>{
+            dispatch(clearComplete());
         }
     }
 }
