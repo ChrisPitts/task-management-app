@@ -3,6 +3,9 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
+  color: yellow;
+  background-color: black;
+  font-size: 1.5em;
 }
 
 nav {
@@ -20,9 +23,28 @@ nav ul li {
 }
 nav ul a {
   height: 100%;
-  color: yellow;
+  color: green;
+}
+
+main input {
+  display: inline-block;
+  margin-right: 10px;
+}
+main #addBtn {
+  display: inline-block;
 }
 
 form input, form textarea {
   width: 80%;
+}
+
+button {
+  background: linear-gradient(green, rgb(1, 58, 1));
+  color: yellow;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+}
+button:hover {
+  background: linear-gradient(rgb(1, 58, 1), green);
 }/*# sourceMappingURL=App.css.map */

@@ -12,8 +12,9 @@ function App() {
 
   return (
     <>
-      <Nav/>
+      
       <BrowserRouter>
+        <Nav/>
         <Routes>
           <Route path='/' element={<Todos/>}/>
           <Route path='/contact' element={<Contact/>}/>

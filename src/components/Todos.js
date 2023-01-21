@@ -22,7 +22,7 @@ export class Input extends Component {
         return (
             <div>
                 <input value={this.state.description} onChange={this.handleChangeDescription.bind(this)}></input>
-                <button onClick={()=>this.addItem()}>Add</button>
+                <button onClick={()=>this.addItem()} useId="addBtn">Add</button>
             </div>
         )
     }
@@ -38,7 +38,7 @@ function Todo(props)
                 checked={props.complete}
                 onClick={()=>props.toggleComplete(props.index)}>
             </input> 
-            {props.description} 
+            <span>{props.description}</span> 
             <button onClick={()=>props.onDelete(props.index)}>Delete</button>
             </div>
     )
@@ -50,8 +50,8 @@ function TodoList(props)
   const state = useSelector((state)=>state);
   
   return (
-    <>
-        <Input onAdd={props.onAdd}/>
+    <main>
+        <Input onAdd={props.onAdd} />
         {state.map((item, index) => (  
         <Todo 
             description={item.description} 
@@ -61,7 +61,7 @@ function TodoList(props)
             toggleComplete={props.toggleComplete}/>
         ))}
         <button onClick={()=>props.clearComplete()}>Clear Complete</button>
-    </>
+    </main>
   );
 }
 

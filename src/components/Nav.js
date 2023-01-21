@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Nav() {
   return (
     <nav>
         <ul>
-            <li><a href="/">Todos</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><Link to="/">Todos</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
         </ul>
     </nav>
   )
