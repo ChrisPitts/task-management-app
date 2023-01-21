@@ -1,12 +1,13 @@
-$text-color-main: yellow;
-$text-color-nav: green;
-$text-color-button: yellow;
+$text-color-main: #FFF;
+$text-color-nav: #FFF;
+$text-color-button: #FFF;
 
 
-$nav-color: blue;
-$background-color: black;
-$button-color-1: green;
-$button-color-2: rgb(1, 58, 1);
+$nav-color: #57a6a8;
+$background-color: #85dcb0;
+$todo-background-color: #aa838f;
+$button-color-1: #41b3a3;
+$button-color-2: #276e65;
 
 
 $font-size: 1.5em;
@@ -20,6 +21,7 @@ body
     color: $text-color-main;
     background-color: $background-color;
     font-size: $font-size;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 nav{
@@ -35,6 +37,7 @@ nav{
         a{
             height: 100%;
             color: $text-color-nav;
+            text-decoration: none;
         }
     }
 }
@@ -46,6 +49,17 @@ main{
     }
     #addBtn{
         display: inline-block;
+    }
+
+    .todoItem{
+        display:grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        width: 70%;
+        align-items: center;
+        margin: 1px auto;
+        background-color: $todo-background-color;
+        padding: 5px;
+        border-radius: 5px;
     }
 }
 
@@ -61,6 +75,8 @@ button{
     font-weight: bold;
     padding: 10px;
     border-radius: 10px;
+    border: none;
+    margin: 5px 0;
 
     &:hover{
         background: linear-gradient($button-color-2, $button-color-1);

@@ -11,7 +11,6 @@ export function addItem(description, complete=false){
 
 // Removing an item from the list
 export function deleteItem(index){
-    console.log("delete")
     return ({
             type: "DELETE_ITEM",
             index: index

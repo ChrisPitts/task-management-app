@@ -3,13 +3,14 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  color: yellow;
-  background-color: black;
+  color: #FFF;
+  background-color: #85dcb0;
   font-size: 1.5em;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 nav {
-  background-color: blue;
+  background-color: #57a6a8;
   padding: 1px;
 }
 nav ul {
@@ -23,7 +24,8 @@ nav ul li {
 }
 nav ul a {
   height: 100%;
-  color: green;
+  color: #FFF;
+  text-decoration: none;
 }
 
 main input {
@@ -33,18 +35,30 @@ main input {
 main #addBtn {
   display: inline-block;
 }
+main .todoItem {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  width: 70%;
+  align-items: center;
+  margin: 1px auto;
+  background-color: #aa838f;
+  padding: 5px;
+  border-radius: 5px;
+}
 
 form input, form textarea {
   width: 80%;
 }
 
 button {
-  background: linear-gradient(green, rgb(1, 58, 1));
-  color: yellow;
+  background: linear-gradient(#41b3a3, #276e65);
+  color: #FFF;
   font-weight: bold;
   padding: 10px;
   border-radius: 10px;
+  border: none;
+  margin: 5px 0;
 }
 button:hover {
-  background: linear-gradient(rgb(1, 58, 1), green);
+  background: linear-gradient(#276e65, #41b3a3);
 }/*# sourceMappingURL=App.css.map */

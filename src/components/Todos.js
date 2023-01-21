@@ -22,7 +22,7 @@ export class Input extends Component {
         return (
             <div>
                 <input value={this.state.description} onChange={this.handleChangeDescription.bind(this)}></input>
-                <button onClick={()=>this.addItem()} useId="addBtn">Add</button>
+                <button onClick={()=>this.addItem()} useid="addBtn">Add</button>
             </div>
         )
     }
@@ -32,7 +32,7 @@ export class Input extends Component {
 function Todo(props)
 {
     return(
-        <div>
+        <div class="todoItem">
             <input 
                 type={"checkbox"} 
                 checked={props.complete}
@@ -40,7 +40,7 @@ function Todo(props)
             </input> 
             <span>{props.description}</span> 
             <button onClick={()=>props.onDelete(props.index)}>Delete</button>
-            </div>
+        </div>
     )
 }
 
