@@ -1,3 +1,4 @@
+// Adding an item to the list
 export function addItem(description, complete=false){
     return (
         {
@@ -8,7 +9,7 @@ export function addItem(description, complete=false){
     );
 }
 
-
+// Removing an item from the list
 export function deleteItem(index){
     console.log("delete")
     return ({
@@ -18,6 +19,7 @@ export function deleteItem(index){
     )
 }
 
+// Toggling the complete status of an item
 export function toggleComplete(index){
     return ({
             type: "TOGGLE_COMPLETE",
@@ -25,6 +27,7 @@ export function toggleComplete(index){
         })
 }
 
+// Removing all complete items from the list
 export function clearComplete(){
     return ({type: "CLEAR_COMPLETE"});
 }

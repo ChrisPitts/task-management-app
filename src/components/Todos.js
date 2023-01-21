@@ -1,16 +1,18 @@
-// import React from 'react'
 import React, { Component } from 'react';
-import { useDispatch, useSelector, connect} from 'react-redux';
+import { useSelector, connect} from 'react-redux';
 import { addItem, clearComplete, deleteItem, toggleComplete} from '../state/action-creators';
 
+// Component that allows the user to add items to the to do list
 export class Input extends Component {
     constructor(props){
         super(props);
         this.state = {description: ""};
     }
+// activates whenever the input field changes
     handleChangeDescription(event){
         this.setState({description: event.target.value})
     }
+// adds an item to the to do list
     addItem()
     {
         this.props.onAdd(this.state.description);
@@ -26,7 +28,7 @@ export class Input extends Component {
     }
 }
 
-
+// Displays an individual todo list item
 function Todo(props)
 {
     return(
@@ -42,6 +44,7 @@ function Todo(props)
     )
 }
 
+// Contains the entire todo list
 function TodoList(props)
 {
   const state = useSelector((state)=>state);
@@ -87,8 +90,6 @@ function mapDispatchToProps(dispatch)
 const TodoListContainer = connect(mapStateToProps, mapDispatchToProps) (TodoList)
 
 export default function Todos() {
-    
-
     return (
         <div>
             <TodoListContainer/>

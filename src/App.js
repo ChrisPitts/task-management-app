@@ -9,7 +9,6 @@ function App() {
 
   const state = useSelector((state)=>state);
 
-  console.log(state);
 
   return (
     <>
