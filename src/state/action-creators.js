@@ -1,20 +1,26 @@
-import { type } from "@testing-library/user-event/dist/type"
-
 export function addItem(description, complete=false){
-    return (dispatch)=>{
-        dispatch({
+    return (
+        {
             type: "ADD_ITEM",
             description: description,
             complete: complete
-        })
-    }
+        }
+    );
 }
 
+
 export function deleteItem(index){
-    return (dispatch)=>{
-        dispatch({
+    console.log("delete")
+    return ({
             type: "DELETE_ITEM",
             index: index
+        }
+    )
+}
+
+export function toggleComplete(index){
+    return ({
+            type: "TOGGLE_COMPLETE",
+            index: index
         })
-    }
 }
