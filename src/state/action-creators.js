@@ -26,11 +26,10 @@ export function toggleComplete(index){
         })
 }
 
-// Removing all complete items from the list
-export function clearComplete(){
-    return ({type: "CLEAR_COMPLETE"});
-}
-
+// Set the filter for which items show up on the list
+// ALL
+// COMPLETE
+// INCOMPLETE
 export function setFilter(filter){
     return ({
         type: "SET_FILTER", 

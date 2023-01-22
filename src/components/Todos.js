@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { useSelector, connect} from 'react-redux';
-import { addItem, clearComplete, deleteItem, toggleComplete, setFilter} from '../state/action-creators';
+import { addItem, deleteItem, toggleComplete, setFilter} from '../state/action-creators';
 
 // Component that allows the user to add items to the to do list
 export class Input extends Component {
