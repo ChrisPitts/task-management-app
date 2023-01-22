@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { useSelector, connect} from 'react-redux';
-import { addItem, clearComplete, deleteItem, toggleComplete} from '../state/action-creators';
+import { addItem, clearComplete, deleteItem, toggleComplete, setFilter} from '../state/action-creators';
 
 // Component that allows the user to add items to the to do list
 export class Input extends Component {
@@ -31,8 +31,9 @@ export class Input extends Component {
 // Displays an individual todo list item
 function Todo(props)
 {
+    let hiddenStr = props.hidden ? 'hidden' : '';
     return(
-        <div class="todoItem">
+        <div className={`todoItem ${hiddenStr}`}>
             <input 
                 type={"checkbox"} 
                 checked={props.complete}
@@ -48,25 +49,36 @@ function Todo(props)
 function TodoList(props)
 {
   const state = useSelector((state)=>state);
+//   console.dir(state);
+
+    
   
-  return (
+    return (
+
     <main>
         <Input onAdd={props.onAdd} />
-        {state.map((item, index) => (  
+        {state.items.map((item, index) => (  
         <Todo 
             description={item.description} 
             complete={item.complete} 
             index={index}
             onDelete={props.onDelete}
-            toggleComplete={props.toggleComplete}/>
+            toggleComplete={props.toggleComplete}
+            hidden={(state.filter == "COMPLETE" && item.complete == false)||
+                    (state.filter == "INCOMPLETE" && item.complete == true)}/>
         ))}
-        <button onClick={()=>props.clearComplete()}>Clear Complete</button>
+        <button className={'filterBtn ' + (state.filter == "ALL" ? "active" : "")} onClick={()=>props.setFilter("ALL")}>All</button>
+        <button className={'filterBtn ' + (state.filter == "COMPLETE" ? "active" : "")} onClick={()=>props.setFilter("COMPLETE")}>Complete</button>
+        <button className={'filterBtn ' + (state.filter == "INCOMPLETE" ? "active" : "")} onClick={()=>props.setFilter("INCOMPLETE")}>Incomplete</button>
     </main>
   );
 }
 
 function mapStateToProps(state){
-    return {items: state}
+    return {
+        items: state.items,
+        filter: state.filter
+    }
 }
 
 function mapDispatchToProps(dispatch)
@@ -81,9 +93,10 @@ function mapDispatchToProps(dispatch)
         toggleComplete: (index)=>{
             dispatch(toggleComplete(index));
         },
-        clearComplete: ()=>{
-            dispatch(clearComplete());
+        setFilter: (filter)=>{
+            dispatch(setFilter(filter));
         }
+        
     }
 }
 

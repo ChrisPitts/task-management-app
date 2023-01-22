@@ -1,4 +1,4 @@
-export function reducer(state = [], action){
+export function items(state = [], action){
     switch(action.type)
     {
         case "ADD_ITEM":
@@ -12,16 +12,14 @@ export function reducer(state = [], action){
                 ...state.slice(action.index + 1)
             ];
         case "TOGGLE_COMPLETE":
-            return[
+            return [
                 ...state.slice(0, action.index),
                 {
                     description: state[action.index].description, 
                     complete: !state[action.index].complete
                 },
                 ...state.slice(action.index + 1)
-            ]
-        case "CLEAR_COMPLETE":
-            return state.filter(item =>!item.complete);
+                ]
         default: 
             return state;
     }

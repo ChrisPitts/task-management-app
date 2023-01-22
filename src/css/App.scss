@@ -24,6 +24,10 @@ body
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.hidden{
+    display: none!important;
+}
+
 nav{
     background-color: $nav-color;
     padding: 1px;
@@ -60,6 +64,15 @@ main{
         background-color: $todo-background-color;
         padding: 5px;
         border-radius: 5px;
+    }
+
+    .filterBtn{
+        display: inline-block;
+        margin-right: 5px;
+
+        &.active{
+            background: linear-gradient($button-color-2, $button-color-1);
+        }
     }
 }
 

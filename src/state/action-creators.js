@@ -30,3 +30,10 @@ export function toggleComplete(index){
 export function clearComplete(){
     return ({type: "CLEAR_COMPLETE"});
 }
+
+export function setFilter(filter){
+    return ({
+        type: "SET_FILTER", 
+        filter: filter
+    });
+}

@@ -9,6 +9,10 @@ body {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
+.hidden {
+  display: none !important;
+}
+
 nav {
   background-color: #57a6a8;
   padding: 1px;
@@ -44,6 +48,13 @@ main .todoItem {
   background-color: #aa838f;
   padding: 5px;
   border-radius: 5px;
+}
+main .filterBtn {
+  display: inline-block;
+  margin-right: 5px;
+}
+main .filterBtn.active {
+  background: linear-gradient(#276e65, #41b3a3);
 }
 
 form input, form textarea {
